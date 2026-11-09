@@ -1,0 +1,4 @@
+CFBundleDisplayName = "Kvačica";
+CFBundleName = "Kvačica";
+NSMicrophoneUsageDescription = "Kvačica listens while dictation is on so you can say the answer.";
+NSSpeechRecognitionUsageDescription = "Kvačica turns what you say into text in the answer field.";

@@ -1,0 +1,226 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "Basics": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Основы"
+          }
+        }
+      }
+    },
+    "Body & Health": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тело и здоровье"
+          }
+        }
+      }
+    },
+    "Character & Feelings": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Характер и чувства"
+          }
+        }
+      }
+    },
+    "City & Travel": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Город и путешествия"
+          }
+        }
+      }
+    },
+    "Clothes": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Одежда"
+          }
+        }
+      }
+    },
+    "Family": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Семья"
+          }
+        }
+      }
+    },
+    "Food & Drink": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Еда и напитки"
+          }
+        }
+      }
+    },
+    "Free time": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Свободное время"
+          }
+        }
+      }
+    },
+    "Grammar": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Грамматика"
+          }
+        }
+      }
+    },
+    "Home": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Дом"
+          }
+        }
+      }
+    },
+    "Language & Study": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Язык и учёба"
+          }
+        }
+      }
+    },
+    "Nature & Weather": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Природа и погода"
+          }
+        }
+      }
+    },
+    "Numbers & Colors": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Числа и цвета"
+          }
+        }
+      }
+    },
+    "Opinions & Ideas": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Мнения и идеи"
+          }
+        }
+      }
+    },
+    "Other": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Другое"
+          }
+        }
+      }
+    },
+    "People & Jobs": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Люди и профессии"
+          }
+        }
+      }
+    },
+    "Phrases": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Фразы"
+          }
+        }
+      }
+    },
+    "Sentences": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Предложения"
+          }
+        }
+      }
+    },
+    "Shopping": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Покупки"
+          }
+        }
+      }
+    },
+    "Small words": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Служебные слова"
+          }
+        }
+      }
+    },
+    "Time": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Время"
+          }
+        }
+      }
+    },
+    "Verbs": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Глаголы"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

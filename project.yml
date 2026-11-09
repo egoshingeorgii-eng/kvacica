@@ -1,0 +1,75 @@
+# XcodeGen spec: `xcodegen generate` makes Srpski.xcodeproj (not kept in git).
+# Builds sign to run locally (ad-hoc), with no Apple developer account. scripts/install.sh
+# re-signs with your Apple Development certificate when you pass --signed (for the widgets).
+name: Srpski
+options:
+  bundleIdPrefix: com.georgiiegoshin
+  deploymentTarget:
+    macOS: "14.0"
+  createIntermediateGroups: true
+  developmentLanguage: en
+
+packages:
+  SrbCore:
+    path: Packages/SrbCore
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    CODE_SIGN_STYLE: Manual
+    CODE_SIGN_IDENTITY: "-"
+    DEVELOPMENT_TEAM: ""
+    ENABLE_HARDENED_RUNTIME: NO
+    COMBINE_HIDPI_IMAGES: YES
+    # English and Russian: Shared/Localizable.xcstrings, InfoPlist.strings in *.lproj.
+    LOCALIZATION_PREFERS_STRING_CATALOGS: YES
+    SWIFT_EMIT_LOC_STRINGS: YES
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+
+targets:
+  Srpski:
+    type: application
+    platform: macOS
+    sources:
+      - path: App
+      - path: Shared
+    dependencies:
+      - package: SrbCore
+      - target: SrpskiWidget
+        embed: true
+    info:
+      path: App/Info.plist
+      properties:
+        CFBundleDisplayName: Kvačica
+        CFBundleName: Kvačica
+        LSHasLocalizedDisplayName: true
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        LSApplicationCategoryType: public.app-category.education
+        NSMicrophoneUsageDescription: Kvačica listens while dictation is on so you can say the answer.
+        NSSpeechRecognitionUsageDescription: Kvačica turns what you say into text in the answer field.
+        CFBundleIconFile: AppIcon
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.georgiiegoshin.srpski
+        CODE_SIGN_ENTITLEMENTS: App/Srpski.entitlements
+
+  SrpskiWidget:
+    type: app-extension
+    platform: macOS
+    sources:
+      - path: Widget
+      - path: Shared
+    info:
+      path: Widget/Info.plist
+      properties:
+        CFBundleDisplayName: Kvačica Widgets
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.georgiiegoshin.srpski.widgets
+        CODE_SIGN_ENTITLEMENTS: Widget/SrpskiWidget.entitlements

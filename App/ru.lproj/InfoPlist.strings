@@ -1,0 +1,4 @@
+CFBundleDisplayName = "Kvačica";
+CFBundleName = "Kvačica";
+NSMicrophoneUsageDescription = "Kvačica слушает, пока включена диктовка, чтобы ответ можно было сказать вслух.";
+NSSpeechRecognitionUsageDescription = "Kvačica превращает сказанное в текст в поле ответа.";

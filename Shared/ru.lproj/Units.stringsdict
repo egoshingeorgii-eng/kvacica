@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Not quite: fix the red %lld letters</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@n@</string>
+		<key>n</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>Не совсем: исправь красную букву</string>
+			<key>few</key>
+			<string>Не совсем: исправь красные буквы</string>
+			<key>many</key>
+			<string>Не совсем: исправь красные буквы</string>
+			<key>other</key>
+			<string>Не совсем: исправь красные буквы</string>
+		</dict>
+	</dict>
+	<key>unit: %lld cards to review</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@n@</string>
+		<key>n</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>карточка на повторение</string>
+			<key>few</key>
+			<string>карточки на повторение</string>
+			<key>many</key>
+			<string>карточек на повторение</string>
+			<key>other</key>
+			<string>карточки на повторение</string>
+		</dict>
+	</dict>
+	<key>unit: %lld days</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@n@</string>
+		<key>n</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>день</string>
+			<key>few</key>
+			<string>дня</string>
+			<key>many</key>
+			<string>дней</string>
+			<key>other</key>
+			<string>дня</string>
+		</dict>
+	</dict>
+	<key>unit: %lld words learned</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@n@</string>
+		<key>n</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>слова выучено</string>
+			<key>few</key>
+			<string>слов выучено</string>
+			<key>many</key>
+			<string>слов выучено</string>
+			<key>other</key>
+			<string>слов выучено</string>
+		</dict>
+	</dict>
+	<key>unit: %lld words to review</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@n@</string>
+		<key>n</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>слово на повторение</string>
+			<key>few</key>
+			<string>слова на повторение</string>
+			<key>many</key>
+			<string>слов на повторение</string>
+			<key>other</key>
+			<string>слова на повторение</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
