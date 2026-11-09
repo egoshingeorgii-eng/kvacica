@@ -1,123 +1,52 @@
 # Kvačica
 
-A macOS menu-bar app for learning Serbian vocabulary (Latin script) **from Russian**. Spaced repetition on FSRS-6, answers typed or spoken, everything from the keyboard.
+Learn Serbian words (Latin script) from Russian, right from your Mac's menu bar.
 
-> Prompts and translations are in Russian: the app is made for Russian speakers. The interface itself is in English and Russian (it follows the system language).
+> The words are taught from Russian, so Kvačica is for Russian speakers. The app itself speaks English and Russian, following your Mac's language.
+
+## Download
+
+**[Download Kvačica for Mac](https://github.com/egoshingeorgii-eng/kvacica/releases/latest/download/Kvacica.dmg)**: open the file and drag Kvačica into Applications. Needs macOS 14 Sonoma or later, on any Mac (Apple silicon or Intel).
+
+On first launch Kvačica asks your level and gives you the built-in words up to it. Then it lives in the menu bar: click its icon or press ⌥⌘S from anywhere.
+
+To update, download the new version and replace the old one. Your words and progress stay.
 
 ## What it does
 
-- **Two things to study.** *Review* brings back words just before you'd forget them. A *Lesson* takes N new words (10 by default) from a topic you pick and drills them until they stick. No daily limits: take as many lessons as you like.
-- **Exercises that grow with the word.** A new word starts with multiple choice, true/false and matching pairs, moves on to building it from letter tiles, and ends with typing or saying it whole. Words that are easy to confuse (lekar / lekarka) are mixed into the same lesson, never back to back.
-- **Sentences and forms.** Known words come back in example sentences with a gap ("Nema \_\_\_.") and as forms from their tables: cases, conjugations, comparatives. Forms you got wrong recently come up more often.
-- **About 860 built-in words**, A1 to B1, in 18 topics (Food & Drink, City & Travel, Body & Health…), each with forms and example sentences. The first launch asks your level; the rest of the library is under *New words*.
-- **Keyboard-first.** Serbian letters sit where they are on a Serbian keyboard, in any layout, even Russian: `;` č, `'` ć, `[` š, `]` đ, `\` ž (Shift for capitals). `?` means "I don't know", Enter goes on, Esc leaves a lesson. Missing diacritics are forgiven by default (a setting makes them strict).
-- **Dictation.** Tap Tab (or the mic button), say the answer; a pause stops listening and checks it.
-- **Lives in the menu bar.** ⌥⌘S opens it from anywhere. The menu bar can also show a new word every few minutes.
-- **Words from a chat.** Ask Claude or ChatGPT "add the words from this text to Kvačica" and they show up in your deck with forms and examples (see [Adding words](#adding-words)).
-- **Widgets** for "how many to review" and "a word" (only in a build signed with a team, see below).
+- **Brings words back just before you'd forget them**, so each one sticks with as few repeats as possible.
+- **Lessons by topic.** About 860 built-in words from A1 to B1: food, travel, health, home, work and more, with word forms and example sentences. Take as many lessons a day as you like.
+- **Gets harder as you learn.** A new word starts with picking the right answer, then you build it from letters, then type it or say it.
+- **Keyboard-first.** Everything works from the keyboard, and Serbian letters (č, ć, š, ž, đ) type even in the Russian layout.
+- **Answer out loud.** Press Tab and say the word: Kvačica listens with the Mac's own speech recognition in Serbian (or Croatian, where macOS has no Serbian).
+- **Words from your chat.** Ask Claude or ChatGPT to "add the words from this text to Kvačica", and they arrive in your deck with forms and examples.
+- **Widgets** for your desktop: how many words to review, and a word to look at.
 
-## Install
+## Adding words from a chat
 
-You need a Mac with **macOS 14 Sonoma or later** and **Xcode 26 or later** (free in the App Store; open it once after installing). There is no prebuilt download yet, so the app is built from source. It takes a few minutes, mostly the first build.
+1. In Kvačica: Settings → *Words from chat* → *Create my link*.
+2. Add that link to your chat as a connector, named Kvačica:
+   - **Claude:** Settings → Connectors → Add custom connector.
+   - **ChatGPT:** Settings → Apps & Connectors → turn on developer mode → create a connector.
+3. Ask, for example, "Give me 20 words for a visit to the doctor and add them to Kvačica".
 
-```bash
-git clone https://github.com/egoshingeorgii-eng/kvacica.git
-cd kvacica
-./scripts/install.sh
-```
+It works from your phone too, even when the Mac is off: the words wait and arrive the next time Kvačica is open. Anyone with your link can add words to your deck, so keep it to yourself.
 
-The script installs [XcodeGen](https://github.com/yonaskolb/XcodeGen) with Homebrew if it's missing, builds the app, puts it in `/Applications/Kvačica.app` (or `~/Applications` if `/Applications` isn't writable) and opens it.
-
-| Option | What it does |
-|---|---|
-| `--signed` | Signs with your *Apple Development* certificate instead of ad-hoc, which turns on the widgets. A free Apple ID is enough: Xcode → Settings → Accounts → add it, then *Manage Certificates… → + → Apple Development*. |
-| `--mcp` | Also installs the local MCP server for Claude Desktop (see below). |
-| `--no-open` | Installs without opening the app. |
-| `--build-only` | Builds and signs into `build/`, doesn't install. |
-
-No Apple developer account is needed. By default the app is signed to run locally (ad-hoc): everything works except the widgets, because macOS shares a folder between an app and its widget only for apps signed by a team.
-
-To update, `git pull` and run `./scripts/install.sh` again. Your words and progress stay.
-
-### Install with an AI agent
-
-Point Claude Code, Codex or another coding agent at this repo:
-
-> Clone https://github.com/egoshingeorgii-eng/kvacica and install the app following its AGENTS.md.
-
-[AGENTS.md](AGENTS.md) tells the agent what to check, what to run and how to fix the usual problems.
-
-### First launch
-
-A welcome window asks your level and puts the built-in words up to it into your deck. The app then sits in the menu bar; the main window is under its icon or ⌥⌘S. When you first use dictation, macOS asks for the microphone and speech recognition. An ad-hoc build is a new app to macOS each time it's rebuilt, so after an update it may ask again.
-
-## Adding words
-
-**From a chat (Claude or ChatGPT).** Settings → *Words from chat* → *Create my link*. Add the link as a custom connector: in Claude, Settings → Connectors → Add custom connector; in ChatGPT, Settings → Apps & Connectors → developer mode → create a connector. Then ask, for example, "Add the words from this text to Kvačica" or "Give me 20 words for the doctor's". This works from your phone too, while the Mac is off: the words wait in the cloud and come in the next time the app is open. Anyone with the link can add words to your deck, so keep it to yourself.
-
-**From Claude Desktop, locally.** `./scripts/install-mcp.sh` (or `install.sh --mcp`) builds a small MCP server and registers it in Claude Desktop's config. Quit Claude Desktop (⌘Q) first: while running, it can overwrite its config. The server has `add_words`, `delete_words`, `add_examples`, `add_forms`, `list_words` and `get_mistakes`. It doesn't touch the database: it drops decks into `~/Library/Application Support/Srpski/Inbox/`, and the app imports them right away.
-
-**By hand.** **+** on the Words tab, or paste a deck in JSON with ⌘⇧V (File → Paste Deck; a ```` ```json ```` fence and text around it are ignored), or import a file with ⌘O.
-
-### Deck format
-
-```json
-{
-  "version": 1,
-  "notes": [
-    {"id": "stric", "kind": "word", "cue": "дядя (брат отца)", "answer": "stric",
-     "level": "A1", "topic": "Family", "cluster": "uncles-aunts"},
-    {"id": "sad", "kind": "word", "cue": "сейчас", "answer": "sad", "accept": ["sada"]},
-    {"id": "hleb", "kind": "word", "cue": "хлеб", "answer": "hleb",
-     "forms": {"gen.sg": "hleba", "ins.sg": "hlebom"},
-     "examples": [{"sr": "Kupio sam *hleba* u pekari.", "ru": "Я купил хлеба в пекарне."}]}
-  ]
-}
-```
-
-| Field | Required | Meaning |
-|---|---|---|
-| `id` | yes | Stable unique id. Importing a note with an existing id updates it and keeps its progress. |
-| `kind` | yes | `word` and `phrase` are studied both ways; `form` and `sentence` only Russian → Serbian. |
-| `cue` | yes | The prompt, in Russian. |
-| `answer` | yes | The Serbian answer, Latin script with č ć š ž đ. |
-| `accept` | no | Other correct answers. |
-| `info` | no | A note shown after answering. |
-| `level` | no | `A1` … `C2`, default `A1`. |
-| `topic` | no | One of the built-in topics (Phrases, Small words, Verbs, People & Jobs, Character & Feelings, Family, Body & Health, Food & Drink, Clothes, Shopping, Home, City & Travel, Nature & Weather, Free time, Language & Study, Time, Numbers & Colors, Opinions & Ideas, Grammar, Sentences). |
-| `cluster` | no | Words that are easy to confuse share a cluster (2–6 words). |
-| `forms` | no | Form table: nouns `nom.sg` … `loc.pl`; adjectives `f.gen`, `m.loc`, `comp`, `sup`; verbs `pres.1sg` … `pres.3pl`, `past.m.sg` … `past.n.pl`, `imp.2sg`, `imp.1pl`, `imp.2pl`. A second spelling after `/`. |
-| `examples` | no | 1–5 sentences with the word marked by asterisks, exactly one per sentence. |
-
-At the top level, `"delete": ["id", …]` removes notes with their history, `"examples": {"id": [...]}` and `"forms": {"id": {...}}` add sentences or forms to existing notes without touching anything else.
+You can also add a word yourself with **+** on the Words tab, or import a list of words as a file ([format](docs/deck-format.md)).
 
 ## Your data
 
-Everything lives in `~/Library/Application Support/Srpski/`: the database (`Srpski.store`), the MCP inbox and a few files the app keeps up to date for the MCP server (`notes.json`, `tutor-report.md`). Nothing leaves your Mac unless you create a chat link: then the words you add from a chat pass through the app's small cloud service (srpski.egoshin.workers.dev), and the app sends it the list of your words so the chat can see what you already have. [Privacy](https://srpski.egoshin.workers.dev/privacy).
+Your words and progress stay on your Mac, in `~/Library/Application Support/Srpski`. Only if you create a chat link, the words you add from a chat pass through Kvačica's small cloud service, which also keeps a list of your words so the chat knows what you already have. [Privacy policy](https://srpski.egoshin.workers.dev/privacy).
 
 ## Uninstall
 
-Quit Kvačica (menu bar icon → Quit), move `/Applications/Kvačica.app` to the Trash, and if you want your words gone too, `~/Library/Application Support/Srpski`. If you installed the MCP server, remove the `srpski` entry from `~/Library/Application Support/Claude/claude_desktop_config.json`.
+Quit Kvačica (menu bar icon → Quit Kvačica) and move it from Applications to the Trash. To remove your words as well, also delete the folder `~/Library/Application Support/Srpski`.
 
-## Not in this repo
+## For developers
 
-Kvačica also has an iPhone app with iCloud sync between the two. That part is not open source; a build from this repo studies on its own Mac (the Settings section about iCloud shows it as off).
+Kvačica is a SwiftUI app. You can build it from source with Xcode 26 or later: `./scripts/install.sh` builds and installs it ([AGENTS.md](AGENTS.md) has the details and options). `./scripts/install-mcp.sh` adds a local MCP server for Claude Desktop. The study logic is in `Packages/SrbCore` (`swift test`).
 
-## Development
-
-```bash
-xcodegen generate && open Srpski.xcodeproj   # scheme Srpski, Run
-cd Packages/SrbCore && swift test             # the study logic
-```
-
-- `Packages/SrbCore` — everything without UI: SwiftData models, the FSRS scheduler, lesson and exercise picking, grading, deck import, statistics. `Sources/SrpskiMCP` is the MCP server (stdio, no dependencies).
-- `App` — the SwiftUI app: windows, menu bar, settings, speech and dictation.
-- `Widget` — the WidgetKit extension; the app writes `widget.json` to the shared app group after every change.
-- `Shared` — strings (English keys, Russian in `Localizable.xcstrings`) and the widget's data model.
-
-The Xcode project is generated from `project.yml` and isn't kept in git. Builds from Xcode are signed ad-hoc; use `./scripts/install.sh --signed` for the widgets.
-
-This repo is a copy of the Mac part of a private one, published from time to time, so pull requests are welcome but get applied by hand.
+There is also an iPhone app with iCloud sync between the two; it isn't part of this repo. This repo is the Mac part of a private one, published from time to time, so pull requests are welcome but get applied by hand.
 
 ## License
 
