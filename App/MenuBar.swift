@@ -148,6 +148,9 @@ final class StatusBarController: NSObject, NSPopoverDelegate {
         add(MainWindow.floats ? String(localized: "Quick Card") : String(localized: "Quick Review"), #selector(quickCard), shortcut: defaults.string(forKey: Pref.hotKeyLabel))
         menu.addItem(.separator())
         add(String(localized: "Settings…"), #selector(openSettings), shortcut: "⌘,")
+        if Updates.isOn {
+            add(Updates.available ? String(localized: "Update Available…") : String(localized: "Check for Updates…"), #selector(checkForUpdates))
+        }
         menu.addItem(.separator())
         add(String(localized: "Quit Kvačica"), #selector(quit), shortcut: "⌘Q")
         return menu
@@ -156,6 +159,7 @@ final class StatusBarController: NSObject, NSPopoverDelegate {
     @objc private func openApp() { MainWindow.show() }
     @objc private func quickCard() { MainWindow.floats ? MainWindow.quickCard() : toggle() }
     @objc private func openSettings() { MainWindow.showSettingsPage() }
+    @objc private func checkForUpdates() { Updates.check() }
     @objc private func quit() { NSApp.terminate(nil) }
 
     @objc func toggle() {

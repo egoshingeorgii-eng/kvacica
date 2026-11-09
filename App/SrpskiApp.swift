@@ -24,6 +24,11 @@ struct SrpskiApp: App {
                 Button("Paste Deck") { AppModel.shared.pasteDeck() }
                     .keyboardShortcut("v", modifiers: [.command, .shift])
             }
+            CommandGroup(after: .appInfo) {
+                if Updates.isOn {
+                    Button("Check for Updates…") { Updates.check() }
+                }
+            }
             // ⌘, with the floating panel on: its own Settings page, not a second window of them.
             CommandGroup(replacing: .appSettings) {
                 Button("Settings…") { MainWindow.showSettingsPage() }
@@ -112,6 +117,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             return
         }
         #endif
+        Updates.start()
         if AppModel.shared.needsOnboarding {
             DispatchQueue.main.async { MainWindow.showWelcome() }
         } else if MainWindow.floats {

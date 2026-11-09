@@ -2899,6 +2899,16 @@
         }
       }
     },
+    "Check for Updates…" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Проверить обновления…"
+          }
+        }
+      }
+    },
     "Check now" : {
       "localizations" : {
         "ru" : {
@@ -7935,6 +7945,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "До конца"
+          }
+        }
+      }
+    },
+    "Update Available…" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Доступно обновление…"
           }
         }
       }

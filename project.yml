@@ -12,6 +12,10 @@ options:
 packages:
   SrbCore:
     path: Packages/SrbCore
+  # Updates from this repo's releases (App/Updates.swift).
+  Sparkle:
+    url: https://github.com/sparkle-project/Sparkle
+    from: "2.7.0"
 
 settings:
   base:
@@ -36,6 +40,7 @@ targets:
       - path: Shared
     dependencies:
       - package: SrbCore
+      - package: Sparkle
       - target: SrpskiWidget
         embed: true
     info:
@@ -50,6 +55,11 @@ targets:
         NSMicrophoneUsageDescription: Kvačica listens while dictation is on so you can say the answer.
         NSSpeechRecognitionUsageDescription: Kvačica turns what you say into text in the answer field.
         CFBundleIconFile: AppIcon
+        # Sparkle: the release feed and the key its DMGs are signed with.
+        SUFeedURL: https://github.com/egoshingeorgii-eng/kvacica/releases/latest/download/appcast.xml
+        SUPublicEDKey: 4OBrE/VUiPeK/Ekc+dSI55qQ/Ld09idyGYs43NQ61rY=
+        SUEnableInstallerLauncherService: true
+        SUEnableAutomaticChecks: true
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.georgiiegoshin.srpski

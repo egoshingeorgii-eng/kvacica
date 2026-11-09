@@ -10,7 +10,7 @@ Learn Serbian words (Latin script) from Russian, right from your Mac's menu bar.
 
 On first launch Kvačica asks your level and gives you the built-in words up to it. Then it lives in the menu bar: click its icon or press ⌥⌘S from anywhere.
 
-To update, download the new version and replace the old one. Your words and progress stay.
+Kvačica keeps itself up to date: it checks for a new version once a day and offers to install it, or you can check any time from the menu bar icon → Check for Updates…. Your words and progress stay. (If you have version 1.0, download the new version once by hand; it updates itself from then on.)
 
 ## What it does
 

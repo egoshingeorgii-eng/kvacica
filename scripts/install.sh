@@ -79,6 +79,15 @@ APP_ENTITLEMENTS=build/app.entitlements
 WIDGET_ENTITLEMENTS=build/widget.entitlements
 cp App/Srpski.entitlements "$APP_ENTITLEMENTS"
 cp Widget/SrpskiWidget.entitlements "$WIDGET_ENTITLEMENTS"
+SIGN_AS=-
+$SIGNED && SIGN_AS=$IDENTITY
+# Sparkle's helpers first, innermost first (the app is signed without --deep).
+SPARKLE="$STAGED/Contents/Frameworks/Sparkle.framework"
+codesign --force --sign "$SIGN_AS" "$SPARKLE/Versions/B/XPCServices/Installer.xpc"
+codesign --force --sign "$SIGN_AS" --preserve-metadata=entitlements "$SPARKLE/Versions/B/XPCServices/Downloader.xpc"
+codesign --force --sign "$SIGN_AS" "$SPARKLE/Versions/B/Autoupdate"
+codesign --force --sign "$SIGN_AS" "$SPARKLE/Versions/B/Updater.app"
+codesign --force --sign "$SIGN_AS" "$SPARKLE"
 if $SIGNED; then
   GROUP="$TEAM.com.georgiiegoshin.srpski"
   for file in "$APP_ENTITLEMENTS" "$WIDGET_ENTITLEMENTS"; do

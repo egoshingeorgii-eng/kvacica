@@ -20,7 +20,7 @@ No Xcode needed. The release is signed with Developer ID and notarized, so it op
    Keep the app's file name as it is in the DMG: its "č" is spelled as c + a combining caron, and the widgets are found by that exact name. If `/Applications` isn't writable, use `~/Applications`.
 3. `codesign --verify --deep --strict /Applications/Kva*ica.app` should be silent. Open it with `open /Applications/Kva*ica.app`, or ask the user to.
 
-The app is a menu-bar app: on first launch a welcome window asks the user's level; after that it lives behind a menu-bar icon (⌥⌘S). Tell the user what was installed and where, and that the first use of dictation asks for microphone and speech recognition access. Updating is the same steps; the user's words stay.
+The app is a menu-bar app: on first launch a welcome window asks the user's level; after that it lives behind a menu-bar icon (⌥⌘S). Tell the user what was installed and where, and that the first use of dictation asks for microphone and speech recognition access. Once installed, the app updates itself (Sparkle, from this repo's releases); the same steps also update it. The user's words stay.
 
 ## Build from source (only if asked)
 
